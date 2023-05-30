@@ -2,15 +2,27 @@ import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
 import "./db";
+import ToDo from "./ToDo";
 
 
 function App() {
   const [items, setItems] = useState([]);
 
   function addItem(inputText) {
-    setItems((prevItems) => {
-      return [...prevItems, inputText];
+    const newToDo = new ToDo({
+      text: inputText,
     });
+    newToDo.save(function (err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("Item saved to the database");
+        setItems((prevItems) => [...prevItems, inputText]);
+      }
+    });
+    // setItems((prevItems) => {
+    //   return [...prevItems, inputText];
+    // });
   }
 
   function deleteItem(id) {
