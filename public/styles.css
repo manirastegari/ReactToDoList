@@ -3,7 +3,7 @@ body {
   min-height: 70vh;
   padding: 1rem;
   box-sizing: border-box;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   color: hsl(198, 1%, 29%);
@@ -12,6 +12,10 @@ body {
   font-size: 130%;
 }
 
+footer {
+  margin-top: 15px;
+  text-align: center;
+}
 .container {
   width: 100%;
   height: auto;
