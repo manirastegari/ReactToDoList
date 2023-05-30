@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
+import "./db";
+
 
 function App() {
   const [items, setItems] = useState([]);
